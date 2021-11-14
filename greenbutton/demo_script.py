@@ -1,9 +1,14 @@
-import greenbutton.greenbutton as gb
+import sys
+#sys.path.insert(1, '..\\')
+import greenbutton as gb
 import matplotlib.pyplot as plt
 import datetime
 
 
 df = gb.SAMPLE_DATA
+a = df.Wh.tolist()
+plt.plot(a)
+plt.show()
 
 # Plot daily use
 df_use_by_day = df.groupby(lambda x: df['Start Time'].loc[x].date()).sum()

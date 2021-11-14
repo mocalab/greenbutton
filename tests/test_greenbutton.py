@@ -1,5 +1,7 @@
 import unittest
+import sys
 from unittest.mock import patch
+sys.path.insert(1, '..\\')
 import greenbutton.greenbutton as gb
 
 import pandas as pd

@@ -13,7 +13,7 @@ import pdb
 package_directory = os.path.dirname(os.path.abspath(__file__))
 
 INTERVAL = "./content/IntervalBlock/IntervalReading"
-XMLFILE = os.path.join(package_directory, 'sample_data', 'sample_data.xml')
+XMLFILE = os.path.join(package_directory, 'sample_data', 'CEN_D_SDSU_10059_CONSUMPTION_20181004_10042018110700_ESPI1-0_01-01.xml')
 
 ns = {'default': 'http://www.w3.org/2005/Atom',
     'reading': 'http://naesb.org/espi'}
