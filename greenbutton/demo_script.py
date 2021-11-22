@@ -4,8 +4,8 @@ import greenbutton as gb
 import matplotlib.pyplot as plt
 import datetime
 
-
 df = gb.SAMPLE_DATA
+print(df)
 a = df.Wh.tolist()
 plt.plot(a)
 plt.show()

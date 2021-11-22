@@ -20,6 +20,7 @@ ns = {'default': 'http://www.w3.org/2005/Atom',
     
 def usage_point():
     tree = ET.parse(XMLFILE)
+    print(tree)
     root = tree.getroot()
     
     return root.findall('default:entry/default:content/reading:UsagePoint',ns)
@@ -38,7 +39,8 @@ def end_date_from_interval_block(interval_block_node):
     
 def get_interval_blocks(root):
     """ Return list of interval blocks """
-    return root.findall('default:entry/default:content/reading:IntervalBlock',ns)
+    a = root.findall('default:entry/default:content/reading:IntervalBlock',ns)
+    return a
      
 def get_interval_readings(interval_block):
     """ Return list of interval readings """
@@ -98,6 +100,7 @@ def dataframe_from_xml(xmlfile):
     readings = []
 
     for interval_block in interval_blocks:
+        print(interval_block.findtext('user'))
         for interval_reading in get_interval_readings(interval_block):
             readings.append(parse_reading(interval_reading))
  
@@ -107,4 +110,5 @@ def dataframe_from_xml(xmlfile):
 
 
 SAMPLE_DATA = dataframe_from_xml(XMLFILE)
+
 
